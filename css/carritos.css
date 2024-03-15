@@ -1,0 +1,365 @@
+@import url(variables.css);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-blanco);
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background-color: var(--color-negro);
+    display: grid;
+    grid-template-columns: .8fr 3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "banner contenido"
+    ;
+}
+main{
+    grid-area: contenido;
+}
+header{
+    box-shadow: 0 0 10px var(--color-naranja);
+    padding: 3em;
+    height: 100vh;
+    grid-area: banner;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-areas:
+    "titulo"
+    "categorias"
+    "carritos"
+    "copy"
+    ;
+}
+header .titulo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    grid-area: titulo;
+}
+header h1{
+    color: var(--color-naranja);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header .titulo i{
+    font-size: 3em;
+}
+header .categorias{
+    font-size: 1.3em;
+    grid-area: categorias;
+    line-height: 2.6em;
+}
+header .categorias .home{
+    box-shadow: 0 0 6px var(--color-gris);
+}
+header .categorias i{
+    margin-right: .7em;
+    font-size: 1.3em;
+    color: var(--color-naranja);
+}
+header .categorias img{
+    margin-right: 1em;
+    width: 1.3em;
+    height: 1.3em;
+}
+header .icono{
+    display: none;
+}
+header .carritos{
+    grid-area: carritos;
+    font-size: 1.3em;
+}
+header .carritos i{
+    margin-right: .7em;
+    font-size: 1.5em;
+    color: var(--color-naranja);
+}
+header .carritos button{
+    outline:  solid .5px var(--color-naranja);
+    border: none;
+    margin-left: 2em;
+    background-color: var(--color-negro);
+    width: 3em;
+    height: 2em;
+}
+header .copy{
+    grid-area: copy;
+}
+header a:hover{
+    cursor: pointer;
+    color: var(--color-naranja);
+    text-shadow: 0 0 10px var(--color-naranja);
+}
+
+
+.main{
+    box-shadow: 0 0 8px var(--color-gris);
+    overflow-y: scroll;
+    margin: auto;
+    width: 70vw;
+    height:70vh;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "item01"
+    "item02"
+    "item03"
+    ;
+}
+::-webkit-scrollbar {
+    width: .7em;
+    background-color: var(--color-naranja);
+}
+::-webkit-scrollbar-track {
+    border: 1px solid var(--color-naranja);
+    background-color: var(--color-negro);
+}
+::-webkit-scrollbar-thumb{
+    height: 5px;
+    border-radius: 20px;
+    background-color: var(--naranja-claro);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-naranja);
+    border-radius: 20px;
+}
+main h1{
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+    padding: 1.2em;
+    height: 5vw;
+    font-size: 3em;
+    grid-area: titulo;
+    text-shadow: 0 3px 10px var(--color-gris);
+    font-family: monospace;
+    text-transform: uppercase;
+}
+.main .c{
+    justify-content: space-between;
+    width: 95%;
+    margin: 1em;
+    display: flex;
+    box-shadow: 0 0 10px var(--color-gris);
+}
+.visible {
+    display: flex;
+}
+.main .c .descripcion{
+    width: 20%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.main .c .descripcion h2{
+    color: var(--color-naranja);
+}
+.main .c .cantidad,
+.main .c .precio,
+.main .c .subtotal,
+.main .c .btn{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.main .c .cantidad div{
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    display: flex;
+    justify-content: center;
+    outline: solid var(--color-naranja);
+}
+.main .c .btn{
+    width: 8%;
+}
+.main .c .btn a{
+    font-size:2em ;
+}
+.main .c .btn a:hover{
+    cursor: pointer;
+}
+.item01{
+    grid-area: item01;
+}
+.item02{
+    grid-area: item02;
+}
+.item03{
+    grid-area: item03;
+}
+.main img{
+    z-index: -10;
+    width: 13em;
+    height: 13em;
+}
+.ilera_final{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    height: 6em;
+    padding-left: 5em;
+    align-items: center;
+}
+.ilera_final .btn01{
+    font-size: 1em;
+    width: 10vw;
+    height: 4vh;
+    background-color: var(--color-naranja);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.ilera_final a{
+    color: var(--color-negro);
+}
+.ilera_final .btn01:hover{
+    cursor: pointer;
+    box-shadow: 0 0 6px var(--color-gris);
+    font-weight: bold;
+}
+.ilera_final .containerbtn{
+    font-size: .8em;
+    width: 16vw;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 10px;
+    outline: solid .5px var(--color-gris);
+}
+.ilera_final .containerbtn .btn02{
+    width: 9vw;
+    height: 4vh;
+    background-color: var(--color-naranja);
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.ilera_final .containerbtn .btn02:hover{
+    cursor: pointer;
+    box-shadow: 0 0 6px var(--color-gris);
+    font-weight: bold;
+}
+
+@media (width <= 700px){
+    body{
+        font-size: 12px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .1fr 1fr;
+        grid-template-areas:
+        "banner"
+        "contenido"
+        ;
+    }
+    header{
+        box-shadow: 0 0 10px var(--color-naranja);
+        height: auto;
+        grid-area: banner;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .titulo{
+        margin: -2em;
+        width: 28em;
+    }
+    header .icono{
+        display: block;
+    }
+    header .icono button{
+        background-color: var(--color-negro);
+    }
+    header nav{
+        display: none;
+    }
+    .visible{
+        margin-top: 10vh;
+        display: block;
+        width: 100%;
+        background-color: var(--color-negro);
+    }
+    .main{
+        box-shadow: 0 0 8px var(--color-gris);
+        overflow-y: scroll;
+        width: 90vw;
+        height:70vh;
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+        "item01"
+        "item02"
+        "item03"
+        ;
+    }
+    .main .c{
+        width: 95%;
+        margin: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0 10px var(--color-gris);
+    }
+    .main .container div{
+       padding: 0;
+    }
+    .main .container p{
+        padding: 0;
+    }
+    .main .c{
+        margin: 1em;
+        width: 90%;
+    }
+    .main .c .descripcion{
+        width: 100%;
+        height: 9vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .main .c .cantidad,
+    .main .c .precio,
+    .main .c .subtotal,
+    .main .c .btn{
+        width: 100%;
+        height: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main .c .cantidad div{
+        width: 5em;
+    }
+    .ilera_final{
+        width: 100vw;
+        height: 7em;
+        padding: 1em;
+    }
+    .ilera_final .btn01{
+        width: 8em;
+        height: 2em;
+        font-size: 1.2em;
+        border-radius: 20px;
+    }
+    .ilera_final .containerbtn{
+        width: 15em;
+        height: 5em;
+        border-radius: 20px;
+    }
+    .ilera_final .containerbtn .btn02{
+        width: 8em;
+        height: 2em;
+        font-size: 1.1em;
+        border-radius: 20px;
+    }
+}

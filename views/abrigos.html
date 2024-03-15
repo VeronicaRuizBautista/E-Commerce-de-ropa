@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrigos</title>
+    <link rel="stylesheet" href="../css/abrigos.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="../js/main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="titulo">
+            <div>
+                <i class='bx bxl-redux bx-spin' style='color:#f3620e'  ></i>            </div>
+            <h1>CampusShop</h1>
+            <div class="icono">
+                <button onclick="botonMenu()" id="abrir" class="abrir">
+                    <i class='bx bx-menu'></i>
+                </button> 
+            </div>
+        </div>
+        <nav class="categorias" id="menu">
+            <ul>
+                <li>
+                    <i class='bx bx-closet'></i>
+                    <a href="../index.html">Todos los productos</a>
+                </li>
+                <li class="home">
+                    <img src="../storage/img/icons8-fireman-coat-50.png" alt="">
+                    <a href="abrigos.html">Abrigos</a>
+                </li>
+                <li>
+                    <img src="../storage/img/icons8-polo-shirt-50.png" alt="">
+                    <a href="camisetas.html">Camisetas</a>
+                </li>
+                <li>
+                    <img src="../storage/img/icons8-pant.png" alt="">
+                    <a href="pantalones.html">Pantalones</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="carritos" id="menu">
+            <i class='bx bxs-cart'></i>
+            <a href="carritos.html">Carritos</a>
+            <button id="contador">0</button>
+        </nav>
+        <nav class="copy" id="menu">
+            <i class='bx bx-copyright'></i>
+            <a href="#">2023 @Camper</a>
+        </nav>
+    </header>
+    <main>
+        <div class="h1">
+            <h1>Abrigos</h1>
+        </div>
+        <div class="main">
+            <div class="item01 c">
+                <img src="../storage/img/abrigo01.png" alt="abrigo01">
+                <div class="container">
+                    <p>Chaqueta Impermeable En Gabán Para Dama Azul</p>
+                    <div>
+                        <p>$ 1.000</p>
+                        <button onclick="incrementar('contador')">Agregar</button> 
+                    </div> 
+                </div>
+            </div>
+            <div class="item02 c">
+                <img src="../storage/img/abrigo02.png" alt="abrigo02">
+                <div class="container">
+                    <p>Chaqueta Impermeable En Gabán Para Dama 'Negro'</p>
+                    <div>
+                        <p>$ 2.000</p>
+                        <button onclick="incrementar('contador')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item03 c">
+                <img src="../storage/img/abrigo03.png" alt="abrigo03">
+                <div class="container">
+                    <p>Chaqueta Impermeable En Gabán Para Dama 'Blanco'</p>
+                    <div>
+                        <p>$ 2.500</p>
+                        <button onclick="incrementar('contador')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item04 c">
+                <img src="../storage/img/abrigo04.png" alt="abrigo04">
+                <div class="container">
+                    <p>Chaqueta Hombre Cuero Sintético</p>
+                    <div>
+                        <p>$ 2.500</p>
+                        <button onclick="incrementar('contador')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item05 c">
+                <img src="../storage/img/abrigo05.png" alt="abrigo05">
+                <div class="container">
+                    <p>Chamrra moderna unisex</p>
+                    <div>
+                        <p>$ 2.000</p>
+                        <button onclick="incrementar('contador')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item06 c">
+                <img src="../storage/img/abrigo06.png" alt="abrigo06">
+                <div class="container">
+                    <p>Abrigo largo color cafe</p>
+                    <div>
+                        <p>$ 2.500</p>
+                        <button onclick="incrementar('contador')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item07 c">
+                <img src="../storage/img/abrigo07.png" alt="abrigo07">
+                <div class="container">
+                    <p>Abrigo de invierno blanco</p>
+                    <div>
+                        <p>$ 2.000</p>
+                        <button onclick="incrementar('contador')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item08 c">
+                <img src="../storage/img/abrigo08.png" alt="abrigo08">
+                <div class="container">
+                    <p>Esmoking elegante para hombre</p>
+                    <div>
+                        <p>$ 2.000</p>
+                        <button onclick="incrementar('contador')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item09 c">
+                <img src="../storage/img/abrigo09.png" alt="abrigo09">
+                <div class="container">
+                    <p>Abrigo imperneable azul cielo</p>
+                    <div>
+                        <p>$ 2.500</p>
+                        <button onclick="incrementar('contador')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
