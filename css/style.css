@@ -1,1 +1,90 @@
 @import url(variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Poppins', 'sans-serif';
+}
+body{
+    width: 100%;
+}
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: var(--color-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header div{
+    margin-left: 5%;
+}
+header h2 {
+    color: var(--color-naranja);
+    font-size: 1.8em;
+}
+header nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin-right: 5%;
+}
+header nav a{
+    color: var(--color-blanco);
+}
+header nav a:hover{
+    box-shadow: 0 0 10px var(--color-blanco);
+    cursor: pointer;
+}
+
+.pag1{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    background-color: var(--color-header);
+}
+.pag1 .container{
+    width: 80vw;
+    height: 70vh;
+    inset: 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "texto img";
+}
+.pag1 article{
+    grid-area: texto;
+}
+.pag1 article h1{
+    font-size: 6em;
+    color: var(--color-naranja);
+    margin-bottom: 20px;
+}
+.pag1 article p{
+
+    color: var(--color-blanco);
+    font-size: 1.5em;
+}
+.pag1 button{
+    margin-top: 2vw;
+    background-color: var(--color-naranja);
+    border: none;
+    width: 8vw;
+    height: 4vh;
+    color: var(--color-blanco);
+    font-size: 1em;
+}
+.pag1 button:hover {
+    box-shadow: 0 0 10px var(--color-naranja);
+    font-weight: bold;
+    cursor: pointer;
+}
+.pag1 .img{
+    display: flex;
+    width: 40vw;
+    height: 60vh;
+    grid-area: img;
+}
