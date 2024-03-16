@@ -6,8 +6,10 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Poppins', 'sans-serif';
+    
 }
 body{
+    font-size: 18px;
     width: 100%;
 }
 header {
@@ -32,6 +34,9 @@ header nav{
     width: 30%;
     margin-right: 5%;
 }
+header .abrir{
+    display: none;
+}
 header nav a{
     color: var(--color-blanco);
 }
@@ -43,7 +48,7 @@ header nav a:hover{
 
 .pag1{
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     background-color: var(--color-fondo);
 }
@@ -57,29 +62,31 @@ header nav a:hover{
     grid-template-rows: 1fr;
     grid-template-areas:
     "texto img";
+    justify-content: center;
 }
 .pag1 article{
     margin-top: 5vw;
     grid-area: texto;
 }
 .pag1 article h1{
-    font-size: 5vw;
+    font-size: 4.5em;
     color: var(--color-naranja);
     margin-bottom: 20px;
 }
 .pag1 article p{
 
     color: var(--color-blanco);
-    font-size: 1.5 vw;
+    font-size: 1.5em;
 }
 .pag1 button{
-    margin-top: 2vw;
+    margin-top: 3em;
     background-color: var(--color-naranja);
     border: none;
-    width: 20%;
-    height: 7%;
+    width: 25%;
+    height: 10%;
     color: var(--color-blanco);
-    font-size: 1vw;
+    font-size: 1em;
+    margin-bottom: 50px
 }
 .pag1 button:hover {
     box-shadow: 0 0 10px var(--color-naranja);
@@ -88,7 +95,7 @@ header nav a:hover{
 }
 .pag1 .img{
     display: flex;
-    width: 80%;
+    width: 100%;
     grid-area: img;
 }
 .pag1 .img  img{
@@ -98,14 +105,13 @@ header nav a:hover{
 
 .pag2{
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     background-color: var(--color-fondo);
 }
 .pag2 .container{
+    height: 70vh;
     width: 80vw;
-    height: 50vh;
-    inset: 0;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -115,8 +121,10 @@ header nav a:hover{
 }
 .pag2 .img{
     display: flex;
-    width: 80%;
+    width: 100%;
+    height: 100%;
     grid-area: img;
+    overflow: hidden;
 }
 .pag2 .img  img{
     object-fit: contain;
@@ -125,7 +133,6 @@ header nav a:hover{
 .pag2 article{
     grid-area: texto;
     color: var(--color-blanco);
-    margin-right: 10vw;
 }
 .pag2 h3{
     color: var(--color-naranja);
@@ -142,10 +149,11 @@ header nav a:hover{
     margin-top: 2vw;
     background-color: var(--color-naranja);
     border: none;
-    width: 8vw;
-    height: 4vh;
+    width: 25%;
+    height: 10%;
     color: var(--color-blanco);
     font-size: 1em;
+    margin-bottom: 50px
 }
 .pag2 button:hover {
     box-shadow: 0 0 10px var(--color-naranja);
@@ -155,7 +163,7 @@ header nav a:hover{
 
 .pag3{
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     background-color: var(--color-fondo);
 }
@@ -190,14 +198,20 @@ header nav a:hover{
     grid-area: img3;
 }
 .pag3 .imgs .img{
+    width: 20em;
+    height: 20em;
     margin: 10px;
-    padding: 10px;
+    padding-bottom: 50px;
     background-color: var(--color-crema);
     border-radius: 10%;
 }
 .pag3 .imagen{
-    width: 80%;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
     grid-area: img;
+    overflow: hidden;
 }
 .pag2 .imagen  img{
     max-width: 100%;
@@ -231,20 +245,21 @@ header nav a:hover{
     margin-bottom: 5vw;
 }
 .pag4 .items{
+    width: 70%;
     display: flex;
+    justify-content: space-between;
+    margin: auto;
     align-items: center;
     color: var(--color-blanco);
 }
 .pag4 .item{
-    margin: 10px;
-    width: 15vw;
-    height: 30vh;
+    width: 30%;
 }
 .pag4 .item div{
     display: flex;
     justify-content: center;
-    width: 20vw;
-    height: 20vh;
+    width: 100%;
+    height: 10em;
 }
 
 .pag{
@@ -263,8 +278,8 @@ header nav a:hover{
     flex-direction: column;
 }
 .pag div .container{
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 70%;
     inset: 0;
     margin: auto;
 }
@@ -281,8 +296,8 @@ header nav a:hover{
     margin-top: 5vw;
     background-color: var(--color-naranja);
     border: none;
-    width: 8vw;
-    height: 4vh;
+    width: 10em;
+    height: 3em;
     color: var(--color-blanco);
     font-size: 1em;
 }
@@ -305,7 +320,7 @@ header nav a:hover{
 }
 .pag5 .linea{
     background-color: var(--color-naranja);
-    width: 30%;
+    width: 4em;
     height: 1px;
     margin-bottom: 10px;
 }
@@ -329,14 +344,33 @@ header nav a:hover{
     font-size: 25px;
 }
 @media (width <= 700px){
+    body{
+        font-size: 10px;
+        text-align: center;
+    }
+    header .abrir{
+        margin-right: 20px;
+        display: flex;
+        color: var(--color-blanco);
+        background-color: var(--color-fondo);
+        border: none;
+        font-size: 2.5em;
+    }
     header nav{
         display: none;
+    } 
+    header .visible{
+        background-color: var(--menu-desplegable);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
     }
     .pag1 .container{
-        width: 80vw;
-        height: 70vh;
-        inset: 0;
-        margin: auto;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -347,9 +381,7 @@ header nav a:hover{
     }
     .pag2 .container{
         width: 80vw;
-        height: 50vh;
-        inset: 0;
-        margin: auto;
+        height: 80vh;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -358,7 +390,12 @@ header nav a:hover{
         "img"
         ;
     }
+    .pag3{
+        height: 110vh;
+    }
     .pag3 .imgs{
+        width: 60%;
+        margin: auto;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -368,18 +405,40 @@ header nav a:hover{
         "img3"
         ;
     }
-    .pag5{
-        background-color: var(--color-fondo);
+    .pag4 .items{
+        width: 70%;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+    .pag4 .item{
         width: 100%;
-        height: 90vh;
+    }
+    .pag{
+        height: 50vh;
+    }
+    .pag div{
+        height: 50%;
+    }
+    .pag div .container{
+        width: 100%;
+    }
+    .pag div .container h1{
+        font-size: 2em;
+    }
+    .pag5{
+        text-align: start;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
+        align-items: center;
+        grid-template-columns: .3fr 1fr .3fr;
+        grid-template-rows: repeat(3, 1fr) .8fr;
         grid-template-areas:
-        "nav1"
-        "nav2"
-        "nav3"
-        "nav4"
+        ". nav1 ."
+        ". nav2 ."
+        ". nav3 ."
+        ". nav4 ."
         ;
     }
 }

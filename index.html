@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing pages de hamburguesa</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
@@ -12,7 +13,10 @@
         <div>
             <h2>Foods</h2>
         </div>
-        <nav class="menu">
+        <button onclick="botonMenu()" id="abrir" class="abrir">
+            <i class='bx bx-menu'></i>
+        </button> 
+        <nav class="menu" id="menu">
             <a href="#pag_1">Home</a>
             <a href="#pag_2">About</a>
             <a href="#pag_3">Menu</a>
