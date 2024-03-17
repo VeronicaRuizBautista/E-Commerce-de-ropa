@@ -6,6 +6,7 @@
     <title>Camisetas</title>
     <link rel="stylesheet" href="../css/camisetas.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="../js/main.js"></script>
 </head>
 <body>
     <header>
@@ -13,8 +14,13 @@
             <div>
                 <i class='bx bxl-redux bx-spin' style='color:#f3620e'  ></i>            </div>
             <h1>CampusShop</h1>
+            <div class="icono">
+                <button onclick="botonMenu()" id="abrir" class="abrir">
+                    <i class='bx bx-menu'></i>
+                </button> 
+            </div>
         </div>
-        <nav class="categorias">
+        <nav class="categorias" id="menu">
             <ul>
                 <li>
                     <i class='bx bx-closet'></i>
@@ -34,12 +40,12 @@
                 </li>
             </ul>
         </nav>
-        <nav class="carritos">
+        <nav class="carritos" id="menu">
             <i class='bx bxs-cart'></i>
             <a href="carritos.html">Carritos</a>
             <button>3</button>
         </nav>
-        <nav class="copy">
+        <nav class="copy" id="menu">
             <i class='bx bx-copyright'></i>
             <a href="#">2023 @Camper</a>
         </nav>
