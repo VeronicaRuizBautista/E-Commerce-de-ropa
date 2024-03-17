@@ -171,15 +171,18 @@ main h1{
 .main .c .btn{
     width: 8%;
 }
-.main .c .btn button{
-    width: 5em;
-    height: 3em;
+.main .c .btn a{
+    width: 4em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
     background-color: var(--color-naranja);
 }
-.main .c .btn button:hover{
+.main .c .btn a:hover{
     cursor: pointer;
     box-shadow: 0 0 10px var(--color-gris);
-    font-weight: bold;
 }
 .item01{
     grid-area: item01;
