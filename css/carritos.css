@@ -78,14 +78,12 @@ header .carritos i{
     color: var(--color-naranja);
 }
 header .carritos button{
+    outline:  solid .5px var(--color-naranja);
+    border: none;
     margin-left: 2em;
     background-color: var(--color-negro);
     width: 3em;
     height: 2em;
-}
-header .carritos button:hover {
-    cursor: pointer;
-    box-shadow: 0 0 10px var(--color-naranja);
 }
 header .copy{
     grid-area: copy;
