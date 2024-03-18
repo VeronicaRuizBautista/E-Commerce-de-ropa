@@ -109,3 +109,49 @@ main h1{
     height: 5vw;
     grid-area: titulo;
 }
+
+@media (width <= 700px){
+    body{
+        font-size: 12px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .1fr 1fr;
+        grid-template-areas:
+        "banner"
+        "contenido"
+        ;
+    }
+    header{
+        box-shadow: 0 0 10px var(--color-naranja);
+        height: auto;
+        grid-area: banner;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .titulo{
+        margin: -2em;
+        width: 28em;
+    }
+    header .icono{
+        display: block;
+    }
+    header .icono button{
+        background-color: var(--color-negro);
+    }
+    header nav{
+        display: none;
+    }
+    .visible{
+        margin-top: 10vh;
+        display: block;
+        width: 100%;
+        background-color: var(--color-negro);
+    }
+    .main{
+        box-shadow: 0 0 8px var(--color-gris);
+        width: 90vw;
+        height:70vh;
+    }
+}
