@@ -79,14 +79,12 @@ header .carritos i{
     color: var(--color-naranja);
 }
 header .carritos button{
+    outline: solid .5px var(--color-naranja);
+    border: none;
     margin-left: 2em;
     background-color: var(--color-negro);
     width: 3em;
     height: 2em;
-}
-header .carritos button:hover {
-    cursor: pointer;
-    box-shadow: 0 0 10px var(--color-naranja);
 }
 header .copy{
     grid-area: copy;
@@ -96,7 +94,6 @@ header a:hover{
     color: var(--color-naranja);
     text-shadow: 0 0 10px var(--color-naranja);
 }
-
 
 .main{
     box-shadow: 0 0 8px var(--color-gris);
@@ -170,6 +167,9 @@ main h1{
     justify-content: space-between;
 }
 .main .container button{
+    outline:  1px solid var(--color-naranja);
+    border-radius: 20px;
+    border: none;
     background-color: var(--color-negro);
     width: 8em;
     height: 2.5em;

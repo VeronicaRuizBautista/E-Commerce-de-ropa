@@ -34,6 +34,9 @@ header{
     "copy"
     ;
 }
+header .icono{
+    display: none;
+}
 header .titulo{
     width: 100%;
     display: flex;
