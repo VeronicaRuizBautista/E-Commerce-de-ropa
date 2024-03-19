@@ -133,7 +133,11 @@ main h1{
     margin-left: 1em;
     padding: 1.5em;
     height: 5vw;
+    font-size: 3em;
     grid-area: titulo;
+    text-shadow: 0 3px 10px var(--color-gris);
+    font-family: monospace;
+    text-transform: uppercase;
 }
 .main .c{
     justify-content: space-between;
@@ -172,7 +176,7 @@ main h1{
     width: 8%;
 }
 .main .c .btn a{
-    width: 5em;
+    width: 5.6em;
     height: 2em;
     display: flex;
     justify-content: center;
@@ -207,7 +211,8 @@ main h1{
     align-items: center;
 }
 .ilera_final .btn01{
-    width: 8vw;
+    font-size: .5em;
+    width: 9vw;
     height: 4vh;
     background-color: var(--color-naranja);
     font-size: 1.2em;
@@ -237,7 +242,7 @@ main h1{
     width: 8vw;
     height: 4vh;
     background-color: var(--color-naranja);
-    font-size: 1.1em;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;

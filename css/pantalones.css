@@ -134,7 +134,11 @@ main h1{
     margin-left: 1em;
     padding: 1.5em;
     height: 5vw;
+    font-size: 3em;
     grid-area: titulo;
+    text-shadow: 0 3px 10px var(--color-gris);
+    font-family: monospace;
+    text-transform: uppercase;
 }
 .main .c{
     margin: 1em;
