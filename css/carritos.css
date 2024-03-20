@@ -143,8 +143,11 @@ main h1{
     justify-content: space-between;
     width: 95%;
     margin: 1em;
-    display: flex;
+    display: none;
     box-shadow: 0 0 10px var(--color-gris);
+}
+.visible {
+    display: flex;
 }
 .main .c .descripcion{
     width: 20%;
