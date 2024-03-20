@@ -79,6 +79,8 @@ header .carritos i{
     color: var(--color-naranja);
 }
 header .carritos button{
+    outline:  solid .5px var(--color-naranja);
+    border: none;
     margin-left: 2em;
     background-color: var(--color-negro);
     width: 3em;

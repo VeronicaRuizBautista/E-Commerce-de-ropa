@@ -103,12 +103,16 @@ header a:hover{
     height:75vh;
     display: grid;
     grid-template-columns:.1fr repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-template-areas:
     ". . . . . "
     ". item01 item02 item03 item04 "
     ". item05 item06 item07 item08 "
-    ". item09 . . . "
+    ". item09 item10 item11 item12 "
+    ". item13 item14 item15 item16 "
+    ". item17 item18 item19 item20 "
+    ". item21 item22 item23 item24 "
+    ". item25 item26 item27 ."
     ;
 }
 ::-webkit-scrollbar {
@@ -171,12 +175,13 @@ main h1{
     justify-content: space-between;
 }
 .main .container button{
-    outline:  1px solid var(--color-naranja);
+    margin: 3px;
     border-radius: 20px;
     border: none;
     background-color: var(--color-negro);
     width: 8em;
     height: 2.5em;
+    margin-bottom: 5px;
 }
 .main .container button:hover{
     cursor: pointer;
@@ -209,7 +214,60 @@ main h1{
 .item09{
     grid-area: item09;
 }
-
+.item10 {
+    grid-area: item10;
+}
+.item11 {
+    grid-area: item11;
+}
+.item12 {
+    grid-area: item12;
+}
+.item13 {
+    grid-area: item13;
+}
+.item14 {
+    grid-area: item14;
+}
+.item15 {
+    grid-area: item15;
+}
+.item16 {
+    grid-area:  item16;
+}
+.item17 {
+    grid-area: item17;
+}
+.item18{
+    grid-area: item18;
+}
+.item19 {
+    grid-area: item19;
+}
+.item20 {
+    grid-area: item20;
+}
+.item21 {
+    grid-area: item21;
+}
+.item22 {
+    grid-area: item22;
+}
+.item23 {
+    grid-area: item23;
+}
+.item24 {
+    grid-area: item24;
+}
+.item25{
+    grid-area: item25;
+}
+.item26 {
+    grid-area: item26;
+}
+.item27 {
+    grid-area: item27;
+}
 .main img{
     z-index: -10;
     width: 100%;
@@ -262,13 +320,22 @@ main h1{
         height:75vh;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(13, 1fr);
         grid-template-areas:
         "item01 item02"
         "item03 item04"
         "item05 item06"
         "item07 item08"
-        " item09 . "
+        "item09 item10"
+        "item11 item12"
+        "item13 item14"
+        "item15 item16"
+        "item17 item18"
+        "item19 item20"
+        "item21 item22"
+        "item23 item24"
+        "item25 item26"
+        "item27 ."
         ;
     }
     .main .container div{

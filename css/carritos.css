@@ -131,7 +131,7 @@ main h1{
     display: flex;
     align-items: center;
     margin-left: 1em;
-    padding: 1.5em;
+    padding: 1.2em;
     height: 5vw;
     font-size: 3em;
     grid-area: titulo;
@@ -176,17 +176,10 @@ main h1{
     width: 8%;
 }
 .main .c .btn a{
-    width: 5.6em;
-    height: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    background-color: var(--color-naranja);
+    font-size:2em ;
 }
 .main .c .btn a:hover{
     cursor: pointer;
-    box-shadow: 0 0 10px var(--color-gris);
 }
 .item01{
     grid-area: item01;
@@ -206,16 +199,15 @@ main h1{
     display: flex;
     justify-content: space-between;
     width: 95%;
-    height: 7em;
+    height: 6em;
     padding-left: 5em;
     align-items: center;
 }
 .ilera_final .btn01{
-    font-size: .5em;
-    width: 9vw;
+    font-size: 1em;
+    width: 10vw;
     height: 4vh;
     background-color: var(--color-naranja);
-    font-size: 1.2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -230,7 +222,8 @@ main h1{
     font-weight: bold;
 }
 .ilera_final .containerbtn{
-    width: 15vw;
+    font-size: .8em;
+    width: 16vw;
     height: 8vh;
     display: flex;
     justify-content: space-between;
@@ -239,7 +232,7 @@ main h1{
     outline: solid .5px var(--color-gris);
 }
 .ilera_final .containerbtn .btn02{
-    width: 8vw;
+    width: 9vw;
     height: 4vh;
     background-color: var(--color-naranja);
     font-size: 1em;
