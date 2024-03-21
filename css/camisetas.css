@@ -273,13 +273,15 @@ main h1{
         ;
     }
     .main .container div{
-       padding: 0;
-    }
-    .main .container p{
         padding: 0;
-    }
-    .main .c{
-        margin: 1em;
-        width: 90%;
-    }
+        color: var(--color-negro);
+     }
+     .main .container p{
+         padding: 0;
+         color: var(--color-negro);
+     }
+     .main .c{
+         margin: .6em;
+         width: 90%;
+     }
 }

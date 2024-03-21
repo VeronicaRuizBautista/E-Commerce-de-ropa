@@ -9,7 +9,7 @@ function agregarProducto(clase) {
     mostrarDiv(clase); // Llamar a la función mostrarDiv
     incrementar('contador'); // Llamar a la función incrementar
 }
-var listaproducto = [];
+/*var listaproducto = [];
 
 function mostrarDiv(clase) {
     // URL del otro HTML
@@ -39,7 +39,7 @@ function mostrarDiv(clase) {
         .catch(error => {
             console.error('Error al cargar el otro HTML:', error);
         });
-}
+}*/
 
 
 function incrementar(id) {
@@ -47,8 +47,7 @@ function incrementar(id) {
     contador++;
     document.getElementById(id).innerText = contador;
 }
-
-function mostrarListaGuardada() {
+/*function mostrarListaGuardada() {
     var listacontenido = JSON.parse(localStorage.getItem('listaproducto'));
     console.log(typeof(listacontenido))
     console.log(listacontenido);
@@ -62,4 +61,4 @@ function mostrarListaGuardada() {
 }
 
 
-document.addEventListener("DOMContentLoaded" , mostrarListaGuardada())
+document.addEventListener("DOMContentLoaded" , mostrarListaGuardada())*/
