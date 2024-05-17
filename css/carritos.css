@@ -101,14 +101,8 @@ header a:hover{
     margin: auto;
     width: 70vw;
     height:70vh;
-    display: grid;
-    grid-template-columns:1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas:
-    "item01"
-    "item02"
-    "item03"
-    ;
+    display: flex;
+    flex-wrap: wrap;
 }
 ::-webkit-scrollbar {
     width: .7em;
@@ -139,65 +133,11 @@ main h1{
     font-family: monospace;
     text-transform: uppercase;
 }
-.main .c{
-    justify-content: space-between;
-    width: 95%;
-    margin: 1em;
-    display: flex;
-    box-shadow: 0 0 10px var(--color-gris);
-}
+
 .visible {
     display: flex;
 }
-.main .c .descripcion{
-    width: 20%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.main .c .descripcion h2{
-    color: var(--color-naranja);
-}
-.main .c .cantidad,
-.main .c .precio,
-.main .c .subtotal,
-.main .c .btn{
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.main .c .cantidad div{
-    background-color: var(--color-blanco);
-    color: var(--color-negro);
-    display: flex;
-    justify-content: center;
-    outline: solid var(--color-naranja);
-}
-.main .c .btn{
-    width: 8%;
-}
-.main .c .btn a{
-    font-size:2em ;
-}
-.main .c .btn a:hover{
-    cursor: pointer;
-}
-.item01{
-    grid-area: item01;
-}
-.item02{
-    grid-area: item02;
-}
-.item03{
-    grid-area: item03;
-}
-.main img{
-    z-index: -10;
-    width: 13em;
-    height: 13em;
-}
+
 .ilera_final{
     display: flex;
     justify-content: space-between;

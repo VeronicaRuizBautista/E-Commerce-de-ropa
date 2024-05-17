@@ -44,6 +44,56 @@
     color: var(--color-naranja);
 }
 
+.carritoItem{
+    justify-content: space-between;
+    width: 95%;
+    margin: 1em;
+    display: flex;
+    box-shadow: 0 0 10px var(--color-gris);
+}
+.carritoItem img{
+    width: 10vw;
+}
+.carritoItem .descripcion{
+    margin: 1em;
+    width: 20%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.carritoItem .descripcion h2{
+    margin: 1em;
+    color: var(--color-naranja);
+}
+.carritoItem .cantidad,
+.carritoItem .precio,
+.carritoItem .subtotal,
+.carritoItem .btn{
+    margin: 1em;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.carritoItem .cantidad div{
+    margin: 1em;
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    display: flex;
+    justify-content: center;
+    outline: solid var(--color-naranja);
+}
+.carritoItem .btn{
+    width: 8%;
+}
+.carritoItem .btn a{
+    font-size:2em ;
+}
+.carritoItem .btn a:hover{
+    cursor: pointer;
+}
+
 @media (width <= 700px){
     body{
         font-size: 12px;

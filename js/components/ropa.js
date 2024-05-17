@@ -1,4 +1,3 @@
-
 export class todos extends HTMLElement{
     constructor(){
         super()
@@ -177,9 +176,13 @@ export class carrito extends HTMLElement{
         this.ropa_carrito();
     }
     async ropa_carrito(){
-        this.renderData(itemsAgregados);
+        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+        console.log("hi",data)
+        //const data = window.itemsAgregados
+        this.renderData(data);
+
     }
-        renderData(itemsAgregados){
+        renderData(data){
             const style = `
             <link rel="stylesheet" href="../css/ropa.css">
             <script src="./js/main.js"></script>`;
