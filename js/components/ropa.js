@@ -270,3 +270,33 @@ export class cantidadCarrito extends HTMLElement{
         
 }
 customElements.define("my-cantidad" , cantidadCarrito)
+
+
+export class ileraFinalCarrito extends HTMLElement{
+    constructor(){
+        super()
+        this.attachShadow({mode: "open"});
+        const style = `
+            <link rel="stylesheet" href="../css/ropa.css">
+            <script src="./js/main.js"></script>`;
+            
+            let content = `${style}`;
+            content += `
+            <div class="btn01">
+                <a href="vaciarcarrito.html">Vaciar Carrito</a>
+            </div>
+            <div class="containerbtn">
+                <div class="texto">
+                    <p>Total</p>
+                    <p>$ 8.500</p>
+                </div>
+                <div class="btn02">
+                    <a href="#">Comprar Ahora</a>
+                </div>
+            </div>
+        `
+
+    this.shadowRoot.innerHTML = content;
+    
+        }
+}
