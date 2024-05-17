@@ -43,3 +43,19 @@
     cursor: pointer;
     color: var(--color-naranja);
 }
+
+@media (width <= 700px){
+    body{
+        font-size: 12px;
+    }
+    .items {
+        margin: 1em;
+        width: 80vw;
+    }
+    .items img{
+        width: 80vw;
+    }
+    .container p{
+        font-size: 1.5em;
+    }
+}

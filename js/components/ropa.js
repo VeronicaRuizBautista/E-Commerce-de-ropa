@@ -25,7 +25,7 @@ export class todos extends HTMLElement{
                     <img src="${val.img}" alt="ropa">
                     <div class="container">
                         <p>${val.description}</p>
-                        <p>${val.value}</p>
+                        <p>$ ${val.value}</p>
                         <div class="btn">
                             <button onclick="incrementar('contador')">Agregar</button> 
                         </div>
@@ -68,7 +68,7 @@ export class abrigos extends HTMLElement{
                         <img src="${val.img}" alt="ropa">
                         <div class="container">
                             <p>${val.description}</p>
-                            <p>${val.value}</p>
+                            <p>$ ${val.value}</p>
                             <div class="btn">
                                 <button onclick="incrementar('contador')">Agregar</button> 
                             </div>
@@ -112,7 +112,7 @@ export class camisetas extends HTMLElement{
                         <img src="${val.img}" alt="ropa">
                         <div class="container">
                             <p>${val.description}</p>
-                            <p>${val.value}</p>
+                            <p>$ ${val.value}</p>
                             <div class="btn">
                                 <button onclick="incrementar('contador')">Agregar</button> 
                             </div>
@@ -156,7 +156,7 @@ export class pantalones extends HTMLElement{
                         <img src="${val.img}" alt="ropa">
                         <div class="container">
                             <p>${val.description}</p>
-                            <p>${val.value}</p>
+                            <p>$ ${val.value}</p>
                             <div class="btn">
                                 <button onclick="incrementar('contador')">Agregar</button> 
                             </div>
