@@ -71,19 +71,23 @@ header .icono{
 header .carritos{
     grid-area: carritos;
     font-size: 1.3em;
+    display: flex;
 }
 header .carritos i{
     margin-right: .7em;
     font-size: 1.5em;
     color: var(--color-naranja);
 }
-header .carritos button{
+header .carritos .button{
     outline:  solid .5px var(--color-naranja);
     border: none;
     margin-left: 2em;
     background-color: var(--color-negro);
-    width: 3em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 header .copy{
     grid-area: copy;

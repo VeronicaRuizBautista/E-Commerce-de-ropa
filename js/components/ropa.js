@@ -68,7 +68,7 @@ export class abrigos extends HTMLElement{
                             <p>${val.description}</p>
                             <p>$ ${val.value}</p>
                             <div class="btn">
-                                <button onclick="incrementar('contador')">Agregar</button> 
+                                <button onclick="agregar('${val.img}', '${val.description}', ${val.value}, '${val.id}')">Agregar</button> 
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ export class camisetas extends HTMLElement{
                             <p>${val.description}</p>
                             <p>$ ${val.value}</p>
                             <div class="btn">
-                                <button onclick="incrementar('contador')">Agregar</button> 
+                                <button onclick="agregar('${val.img}', '${val.description}', ${val.value}, '${val.id}')">Agregar</button> 
                             </div>
                         </div>
                     </div>
@@ -223,3 +223,26 @@ export class carrito extends HTMLElement{
         
 }
 customElements.define("my-carrito" , carrito)
+
+
+export class cantidadCarrito extends HTMLElement{
+    constructor(){
+        super()
+        this.attachShadow({mode: "open"});
+    }
+    connectedCallback(){
+        this.ropa_carrito();
+    }
+    async ropa_carrito(){
+        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || []; 
+        this.renderData(data);
+
+    }
+        renderData(data){
+            let cantidad = data.length;
+            let content = `<p>${cantidad}</p>`
+            this.shadowRoot.innerHTML = content;
+        }
+        
+}
+customElements.define("my-cantidad" , cantidadCarrito)
