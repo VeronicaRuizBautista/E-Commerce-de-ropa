@@ -13,6 +13,17 @@ function botonMenu() {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    var boton = document.getElementById("myBoton");
+
+    if (boton) {
+        boton.addEventListener("click", function() {
+            boton.classList.add("home");
+        });
+    } else {
+        console.error("Elemento con ID 'miBoton' no encontrado.");
+    }
+});
 function agregarProducto(clase) {
     mostrarDiv(clase); // Llamar a la función mostrarDiv
     incrementar('contador'); // Llamar a la función incrementar

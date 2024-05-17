@@ -104,6 +104,10 @@ header a:hover{
     display:flex;
     flex-wrap: wrap;
 }
+.ropita{
+    display:flex;
+    flex-wrap: wrap;
+}
 ::-webkit-scrollbar {
     width: .7em;
     background-color: var(--color-naranja);

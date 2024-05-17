@@ -35,7 +35,7 @@ export class todos extends HTMLElement{
         }
         
 }
-customElements.define("toda-ropa" , todos)
+
 
 
 export class abrigos extends HTMLElement{
@@ -79,7 +79,7 @@ export class abrigos extends HTMLElement{
         }
         
 }
-customElements.define("my-abrigos" , abrigos)
+
 
 
 export class camisetas extends HTMLElement{
@@ -123,7 +123,7 @@ export class camisetas extends HTMLElement{
         }
         
 }
-customElements.define("my-camisetas" , camisetas)
+
 
 
 export class pantalones extends HTMLElement{
@@ -165,7 +165,7 @@ export class pantalones extends HTMLElement{
         }
         
 }
-customElements.define("my-pantalones" , pantalones)
+
 
 export class carrito extends HTMLElement{
     constructor(){
@@ -187,7 +187,6 @@ export class carrito extends HTMLElement{
             <link rel="stylesheet" href="../css/ropa.css">
             <script src="./js/main.js"></script>`;
             let content = `${style}`;
-
             data.forEach(val =>{
                 content += `
                 <div class="carritoItem">

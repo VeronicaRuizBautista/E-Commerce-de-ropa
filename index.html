@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script src="js/main.js"></script>
+    <script type="module" src="js/report.js"></script>
 </head>
 <body>
     <header>
@@ -21,23 +22,23 @@
                 </button> 
             </div>
         </div>
-        <nav class="categorias" id="menu">
+        <nav class="categorias">
             <ul>
-                <li class="home">
+                <li class="home" id="myBoton">
                     <i class='bx bx-closet'></i>
-                    <a href="index.html">Todos los productos</a>
+                    <a class="report_active">Todos los productos</a>
                 </li>
-                <li>
+                <li id="myBoton">
                     <img src="storage/img/icons8-fireman-coat-50.png" alt="">
-                    <a href="views/abrigos.html">Abrigos</a>
+                    <a>Abrigos</a>
                 </li>
-                <li>
+                <li id="myBoton">
                     <img src="storage/img/icons8-polo-shirt-50.png" alt="">
-                    <a href="views/camisetas.html">Camisetas</a>
+                    <a>Camisetas</a>
                 </li>
-                <li>
+                <li id="myBoton">
                     <img src="storage/img/icons8-pant.png" alt="">
-                    <a href="views/pantalones.html">Pantalones</a>
+                    <a>Pantalones</a>
                 </li>
             </ul>
         </nav>
@@ -53,11 +54,9 @@
     </header>
     <main>
         <div class="h1">
-            <h1>Todos los Productos</h1>
+            <h1>Prendas</h1>
         </div>
-        <div class="main">
-            <toda-ropa></toda-ropa>
-            <script type="module" src="js/components/ropa.js"></script>
+        <div class="report_details main ">
         </div>
     </main>
 </body>
