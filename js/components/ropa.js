@@ -1,3 +1,4 @@
+
 export class todos extends HTMLElement{
     constructor(){
         super()
@@ -8,9 +9,7 @@ export class todos extends HTMLElement{
     }
     async ropa_toda(){
         const bdata = await fetch("https://6608363ca2a5dd477b14291c.mockapi.io/allProduct")
-        console.log(bdata)
         const data = await bdata.json();
-        console.log(data)
         this.renderData(data);
     }
         renderData(data){
@@ -27,7 +26,7 @@ export class todos extends HTMLElement{
                         <p>${val.description}</p>
                         <p>$ ${val.value}</p>
                         <div class="btn">
-                            <button onclick="incrementar('contador')">Agregar</button> 
+                            <button onclick="agregar('${val.img}', '${val.description}', ${val.value}, '${val.id}')">Agregar</button> 
                         </div>
                     </div>
                 </div>
@@ -138,9 +137,7 @@ export class pantalones extends HTMLElement{
     }
     async ropa_pantalones(){
         const bdata = await fetch("https://6608363ca2a5dd477b14291c.mockapi.io/allProduct")
-        console.log(bdata)
         const data = await bdata.json();
-        console.log(data)
         this.renderData(data);
     }
         renderData(data){
@@ -170,3 +167,56 @@ export class pantalones extends HTMLElement{
         
 }
 customElements.define("my-pantalones" , pantalones)
+
+export class carrito extends HTMLElement{
+    constructor(){
+        super()
+        this.attachShadow({mode: "open"});
+    }
+    connectedCallback(){
+        this.ropa_carrito();
+    }
+    async ropa_carrito(){
+        this.renderData(itemsAgregados);
+    }
+        renderData(itemsAgregados){
+            const style = `
+            <link rel="stylesheet" href="../css/ropa.css">
+            <script src="./js/main.js"></script>`;
+            let content = `${style}`;
+
+            data.forEach(val =>{
+                content += `
+                <div class="carritoItem">
+                    <div class="img">
+                        <img src="${val.img}" alt="ropa">
+                    </div>
+                    <div class="descripcion">
+                        <h2>${val.id}</h2>
+                        <p>${val.description}</p>
+                    </div>                    
+                    <div class="cantidad">
+                        <h3>Cantidad</h3>
+                        <div class="num">2</div>
+                    </div>
+                    <div class="precio">
+                        <h3>Precio c/u</h3>
+                        <p>$ ${val.value}</p>
+                    </div>
+                    <div class="subtotal">
+                        <h3>subtotal</h3>
+                        <p>$ 2.000</p>
+                    </div>
+                    <div class="btn">
+                        <a href="abrir.html">
+                            <i class='bx bx-trash' style='color:#e07621'  ></i>
+                        </a>
+                    </div>
+            </div>
+            `
+            })
+        this.shadowRoot.innerHTML = content;
+        }
+        
+}
+customElements.define("my-carrito" , carrito)

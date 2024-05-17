@@ -62,3 +62,12 @@ function incrementar(id) {
 
 
 document.addEventListener("DOMContentLoaded" , mostrarListaGuardada())*/
+
+let itemsAgregados =[]
+function agregar(img, description, value, id) {
+    const item= {img, description, value, id}
+    itemsAgregados.push(item)
+    console.log("item agregado", itemsAgregados)
+    incrementar('contador');
+}
+
