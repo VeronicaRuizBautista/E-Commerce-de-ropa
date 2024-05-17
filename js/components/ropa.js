@@ -226,15 +226,23 @@ export class carrito extends HTMLElement{
 
 
 //ELiminar elementos
-        attachEventListeners() {
-            const eliminar = this.shadowRoot.querySelectorAll('.eliminar');
-            eliminar.forEach(button => {
-                button.addEventListener('click', () => {
-                    const carritoItem = button.closest('.carritoItem');
-                    carritoItem.remove();
-                });
-            });
-        }   
+attachEventListeners() {
+    const eliminar = this.shadowRoot.querySelectorAll('.eliminar');
+    eliminar.forEach(button => {
+        button.addEventListener('click', () => {
+            const carritoItem = button.closest('.carritoItem');
+            const itemId = carritoItem.querySelector('.descripcion h2').textContent;
+            carritoItem.remove();
+            this.eliminarItemDelLocalStorage(itemId);
+        });
+    });
+}
+
+eliminarItemDelLocalStorage(itemId) {
+    let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+    data = data.filter(item => item.id !== itemId);
+    localStorage.setItem('itemsAgregados', JSON.stringify(data));
+}
 }
 customElements.define("my-carrito" , carrito)
 
