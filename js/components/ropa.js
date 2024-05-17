@@ -186,9 +186,11 @@ export class carrito extends HTMLElement{
             const style = `
             <link rel="stylesheet" href="../css/ropa.css">
             <script src="./js/main.js"></script>`;
+            
             let content = `${style}`;
             data.forEach(val =>{
                 content += `
+                <head><link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"></head>
                 <div class="carritoItem">
                     <div class="img">
                         <img src="${val.img}" alt="ropa">
@@ -210,7 +212,7 @@ export class carrito extends HTMLElement{
                         <p>$ 2.000</p>
                     </div>
                     <div class="btn">
-                        <a href="abrir.html">
+                        <a href="#" class="eliminar">
                             <i class='bx bx-trash' style='color:#e07621'  ></i>
                         </a>
                     </div>
@@ -218,12 +220,24 @@ export class carrito extends HTMLElement{
             `
             })
         this.shadowRoot.innerHTML = content;
+        this.attachEventListeners();
         }
-        
+
+
+//ELiminar elementos
+        attachEventListeners() {
+            const eliminar = this.shadowRoot.querySelectorAll('.eliminar');
+            eliminar.forEach(button => {
+                button.addEventListener('click', () => {
+                    const carritoItem = button.closest('.carritoItem');
+                    carritoItem.remove();
+                });
+            });
+        }   
 }
 customElements.define("my-carrito" , carrito)
 
-
+//cantidad de items en carrito
 export class cantidadCarrito extends HTMLElement{
     constructor(){
         super()

@@ -103,7 +103,7 @@ header a:hover{
     box-shadow: 0 0 8px var(--color-gris);
     overflow-y: scroll;
     margin: auto;
-    width: 70vw;
+    width: 60vw;
     height:70vh;
     display: flex;
     flex-wrap: wrap;
