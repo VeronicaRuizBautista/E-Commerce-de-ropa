@@ -9,6 +9,7 @@ import { ileraFinalCarrito } from "./components/ropa.js"
 let opcion = document.querySelectorAll("nav.categorias a")
 let report_details = document.querySelector(".report_details")
 let ilera_final = document.querySelector(".ilera_final")
+
 opcion.forEach (val =>{
     val.addEventListener("click", (e)=>{
         e.preventDefault()

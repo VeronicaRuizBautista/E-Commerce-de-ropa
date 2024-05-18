@@ -213,7 +213,7 @@ export class carrito extends HTMLElement{
                         <p>$ ${val.value * val.cantidad}</p>
                     </div>
                     <div class="btn">
-                        <a href="#" class="eliminar">
+                        <a class="eliminar">
                             <i class='bx bx-trash' style='color:#e07621'  ></i>
                         </a>
                     </div>
@@ -223,32 +223,30 @@ export class carrito extends HTMLElement{
             })
         this.shadowRoot.innerHTML = content;
         this.attachEventListeners();
-        // disparar evento total update, tecnica llamada burbujeo de eventos
-        this.dispatchEvent(new CustomEvent("totalUpdate",{detail: this.total}))
         }
 
 
-//ELiminar elementos
-attachEventListeners() {
-    const eliminar = this.shadowRoot.querySelectorAll('.eliminar');
-    eliminar.forEach(button => {
-        button.addEventListener('click', () => {
-            const carritoItem = button.closest('.carritoItem');
-            const itemId = carritoItem.querySelector('.descripcion h2').textContent;
-            carritoItem.remove();
-            this.eliminarItemDelLocalStorage(itemId);
+    //ELiminar elementos
+    attachEventListeners() {
+        const eliminar = this.shadowRoot.querySelectorAll('.eliminar');
+        eliminar.forEach(button => {
+            button.addEventListener('click', () => {
+                const carritoItem = button.closest('.carritoItem');
+                const itemId = carritoItem.querySelector('.descripcion h2').textContent;
+                carritoItem.remove();
+                this.eliminarItemDelLocalStorage(itemId);
+            });
         });
-    });
-}
+    }
 
-eliminarItemDelLocalStorage(itemId) {
-    let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-    data = data.filter(item => item.id !== itemId);
-    localStorage.setItem('itemsAgregados', JSON.stringify(data));
-}
-getTotal() {
-    return this.total;
-}
+    eliminarItemDelLocalStorage(itemId) {
+        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+        data = data.filter(item => item.id !== itemId);
+        localStorage.setItem('itemsAgregados', JSON.stringify(data));
+    }
+    getTotal() {
+        return this.total;
+    }
 }
 customElements.define("my-carrito" , carrito)
 
@@ -281,36 +279,52 @@ export class ileraFinalCarrito extends HTMLElement{
     constructor(){
         super()
         this.attachShadow({mode: "open"});
-        const style = `
-            <link rel="stylesheet" href="../css/ropa.css">
-            <script src="./js/main.js"></script>`;
-            
-            let content = `${style}`;
-            content += `
-            <div class="btn01">
-                <a href="vaciarcarrito.html">Vaciar Carrito</a>
-            </div>
-            <div class="containerbtn">
-                <div class="texto">
-                    <p>Total</p>
-                    <p id="total">$ 0</p>
-                </div>
-                <div class="btn02">
-                    <a href="#">Comprar Ahora</a>
-                </div>
-            </div>
-        `
+        this.total =0;
+    }
+    connectedCallback(){
+        this.ropa_carrito();
+    }
+    async ropa_carrito(){
+        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+        console.log("hi",data)
+        //const data = window.itemsAgregados
+        this.renderData(data);
 
-        this.shadowRoot.innerHTML = content;
-        const self = this;
-        console.log("tamos here")
-        document.addEventListener("totalUpdated", (val) => {
-            const total = self.shadowRoot.getElementById("total");
-            console.log("fea",total)
-            total.textContent = `$ ${val.detail}`;
+    }
+    
+    renderData(data){
+        const style = `
+        <link rel="stylesheet" href="../css/ropa.css">
+        <script src="./js/main.js"></script>
+        <script type="module" src="./js/report.js"></script>
+        `;
+        
+        let content = `${style}`;
+        data.forEach(val =>{
+            this.total += val.value * val.cantidad;
         })
+        content += `
+        <div class="btn01">
+            <a class="vaciarCarrito">Vaciar Carrito</a>
+        </div>
+        <div class="containerbtn">
+            <div class="texto">
+                <p>Total</p>
+                <p>$ ${this.total}</p>
+            </div>
+            <div class="btn02">
+                <a href="#">Comprar Ahora</a>
+            </div>
+        </div>
+        `
+        this.shadowRoot.innerHTML = content;
+        this.shadowRoot.querySelector('.vaciarCarrito').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('itemsAgregados');
+            this.total = 0;
+            this.renderData([]);
+            let report_details = document.querySelector(".report_details")
+            report_details.innerHTML= "El carrito esta vacio :(";
+        });
     }
 }
-
-
-
