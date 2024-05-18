@@ -41,9 +41,16 @@ function incrementar(id) {
 
 function agregar(img, description, value, id) {
     window.itemsAgregados = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-    const item= {img, description, value, id}
-    itemsAgregados.push(item)
-    console.log("item agregado", itemsAgregados)
+    const existente = itemsAgregados.find(item => item.description == description);
+    let cantidad=1
+    if (existente) {
+        existente.cantidad += 1;
+    } else {
+        const item= {img, description, value, id, cantidad}
+        itemsAgregados.push(item)
+        console.log("item agregado", itemsAgregados)
+        localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados));
+    }
     incrementar('contador');
-    localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados));
+    localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados))
 }

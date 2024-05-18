@@ -171,6 +171,7 @@ export class carrito extends HTMLElement{
     constructor(){
         super()
         this.attachShadow({mode: "open"});
+        this.total = 0;
     }
     connectedCallback(){
         this.ropa_carrito();
@@ -201,7 +202,7 @@ export class carrito extends HTMLElement{
                     </div>                    
                     <div class="cantidad">
                         <h3>Cantidad</h3>
-                        <div class="num">2</div>
+                        <div class="num">${val.cantidad}</div>
                     </div>
                     <div class="precio">
                         <h3>Precio c/u</h3>
@@ -209,7 +210,7 @@ export class carrito extends HTMLElement{
                     </div>
                     <div class="subtotal">
                         <h3>subtotal</h3>
-                        <p>$ 2.000</p>
+                        <p>$ ${val.value * val.cantidad}</p>
                     </div>
                     <div class="btn">
                         <a href="#" class="eliminar">
@@ -218,11 +219,13 @@ export class carrito extends HTMLElement{
                     </div>
             </div>
             `
+            this.total += val.value * val.cantidad;
             })
         this.shadowRoot.innerHTML = content;
         this.attachEventListeners();
+        // disparar evento total update, tecnica llamada burbujeo de eventos
+        this.dispatchEvent(new CustomEvent("totalUpdate",{detail: this.total}))
         }
-
 
 
 //ELiminar elementos
@@ -242,6 +245,9 @@ eliminarItemDelLocalStorage(itemId) {
     let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
     data = data.filter(item => item.id !== itemId);
     localStorage.setItem('itemsAgregados', JSON.stringify(data));
+}
+getTotal() {
+    return this.total;
 }
 }
 customElements.define("my-carrito" , carrito)
@@ -271,7 +277,6 @@ export class cantidadCarrito extends HTMLElement{
 }
 customElements.define("my-cantidad" , cantidadCarrito)
 
-
 export class ileraFinalCarrito extends HTMLElement{
     constructor(){
         super()
@@ -288,7 +293,7 @@ export class ileraFinalCarrito extends HTMLElement{
             <div class="containerbtn">
                 <div class="texto">
                     <p>Total</p>
-                    <p>$ 8.500</p>
+                    <p id="total">$ 0</p>
                 </div>
                 <div class="btn02">
                     <a href="#">Comprar Ahora</a>
@@ -296,7 +301,16 @@ export class ileraFinalCarrito extends HTMLElement{
             </div>
         `
 
-    this.shadowRoot.innerHTML = content;
-    
-        }
+        this.shadowRoot.innerHTML = content;
+        const self = this;
+        console.log("tamos here")
+        document.addEventListener("totalUpdated", (val) => {
+            const total = self.shadowRoot.getElementById("total");
+            console.log("fea",total)
+            total.textContent = `$ ${val.detail}`;
+        })
+    }
 }
+
+
+
