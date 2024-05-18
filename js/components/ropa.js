@@ -177,9 +177,9 @@ export class carrito extends HTMLElement{
         this.ropa_carrito();
     }
     async ropa_carrito(){
-        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-        console.log("hi",data)
-        //const data = window.itemsAgregados
+        //let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+        //console.log("hi",data)
+        const data = window.itemsAgregados
         this.renderData(data);
 
     }
@@ -213,7 +213,7 @@ export class carrito extends HTMLElement{
                         <p>$ ${val.value * val.cantidad}</p>
                     </div>
                     <div class="btn">
-                        <a class="eliminar">
+                        <a class="eliminar" >
                             <i class='bx bx-trash' style='color:#e07621'  ></i>
                         </a>
                     </div>
@@ -234,16 +234,25 @@ export class carrito extends HTMLElement{
                 const carritoItem = button.closest('.carritoItem');
                 const itemId = carritoItem.querySelector('.descripcion h2').textContent;
                 carritoItem.remove();
-                this.eliminarItemDelLocalStorage(itemId);
+                const cantidadElement = carritoItem.querySelector('.cantidad .num');
+                console.log(cantidadElement)
+                const cantidad = parseInt(cantidadElement.textContent);
+                console.log(cantidad)
+                if (cantidad > 1) {
+                    window.modificarContador(cantidad);
+                }else {
+                    window.restar()
+                }
+                //this.eliminarItemDelLocalStorage(itemId);
             });
         });
     }
 
-    eliminarItemDelLocalStorage(itemId) {
-        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-        data = data.filter(item => item.id !== itemId);
-        localStorage.setItem('itemsAgregados', JSON.stringify(data));
-    }
+    // eliminarItemDelLocalStorage(itemId) {
+    //     let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+    //     data = data.filter(item => item.id !== itemId);
+    //     localStorage.setItem('itemsAgregados', JSON.stringify(data));
+    // }
     getTotal() {
         return this.total;
     }
@@ -262,7 +271,8 @@ export class cantidadCarrito extends HTMLElement{
         this.ropa_carrito();
     }
     async ropa_carrito(){
-        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || []; 
+        const data = window.itemsAgregados
+        //let data = JSON.parse(localStorage.getItem('itemsAgregados')) || []; 
         this.renderData(data);
 
     }
@@ -271,7 +281,6 @@ export class cantidadCarrito extends HTMLElement{
             let content = `<p>${cantidad}</p>`
             this.shadowRoot.innerHTML = content;
         }
-        
 }
 customElements.define("my-cantidad" , cantidadCarrito)
 
@@ -296,7 +305,6 @@ export class ileraFinalCarrito extends HTMLElement{
         const style = `
         <link rel="stylesheet" href="../css/ropa.css">
         <script src="./js/main.js"></script>
-        <script type="module" src="./js/report.js"></script>
         `;
         
         let content = `${style}`;
@@ -305,7 +313,7 @@ export class ileraFinalCarrito extends HTMLElement{
         })
         content += `
         <div class="btn01">
-            <a class="vaciarCarrito">Vaciar Carrito</a>
+            <a class="vaciarCarrito" onclick="contadorCero()">Vaciar Carrito</a>
         </div>
         <div class="containerbtn">
             <div class="texto">

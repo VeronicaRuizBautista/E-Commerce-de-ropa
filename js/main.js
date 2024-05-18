@@ -37,10 +37,27 @@ function incrementar(id) {
     document.getElementById(id).innerText = contador;
 }
 
+function restar() {
+    let contador = parseInt(document.getElementById('contador').innerText);
+    contador--;
+    document.getElementById('contador').innerText = contador;
+}
+
+window.restar =restar
+function contadorCero() {
+    document.getElementById('contador').innerText = 0;
+}
+function modificarContador(num) {
+    let cont = parseInt(document.getElementById('contador').innerText);
+    contador = cont - num;
+    document.getElementById('contador').innerText = contador;
+}
+window.modificarContador = modificarContador
 
 
+window.itemsAgregados = []
 function agregar(img, description, value, id) {
-    window.itemsAgregados = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+    //window.itemsAgregados = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
     const existente = itemsAgregados.find(item => item.description == description);
     let cantidad=1
     if (existente) {
@@ -49,8 +66,8 @@ function agregar(img, description, value, id) {
         const item= {img, description, value, id, cantidad}
         itemsAgregados.push(item)
         console.log("item agregado", itemsAgregados)
-        localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados));
+        //localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados));
     }
     incrementar('contador');
-    localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados))
+    //localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados))
 }
