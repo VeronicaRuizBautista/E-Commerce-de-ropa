@@ -4,6 +4,8 @@ import { camisetas } from "./components/ropa.js"
 import { pantalones } from "./components/ropa.js"
 import { ileraFinalCarrito } from "./components/ropa.js"
 
+
+
 let opcion = document.querySelectorAll("nav.categorias a")
 let report_details = document.querySelector(".report_details")
 let ilera_final = document.querySelector(".ilera_final")
@@ -17,21 +19,25 @@ opcion.forEach (val =>{
             report_details.innerHTML= `
             <toda-ropa class="ropita"></toda-ropa>
             `
+            ilera_final.innerHTML = "";
         }
         if (e.target.innerText == "Abrigos"){
             report_details.innerHTML= `
             <my-abrigos class="ropita"></my-abrigos>
             `
+            ilera_final.innerHTML = "";
         }
         if (e.target.innerText == "Camisetas"){
             report_details.innerHTML= `
             <my-camisetas class="ropita"></my-camisetas>
             `
+            ilera_final.innerHTML = "";
         }
         if (e.target.innerText == "Pantalones"){
             report_details.innerHTML= `
             <my-pantalones class="ropita"></my-pantalones>
             `
+            ilera_final.innerHTML = "";
         }
     })
 })
@@ -48,7 +54,6 @@ customElements.define("ilera-final" , ileraFinalCarrito)
 
 let carrito = document.querySelector("nav.carritos a")
 carrito.addEventListener("click", (e)=>{
-    console.log("tamos en carrito nen")
     e.preventDefault()
     if (e.target.innerText == "Carritos"){
         report_details.innerHTML= `
