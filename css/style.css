@@ -127,7 +127,7 @@ header a:hover{
     background-color: var(--color-naranja);
     border-radius: 20px;
 }
-main h1{
+.tituloPrincipal{
     display: flex;
     align-items: center;
     margin-left: 1em;

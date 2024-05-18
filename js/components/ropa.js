@@ -37,7 +37,6 @@ export class todos extends HTMLElement{
 }
 
 
-
 export class abrigos extends HTMLElement{
     constructor(){
         super()
@@ -322,18 +321,26 @@ export class ileraFinalCarrito extends HTMLElement{
                 <p>$ ${this.total.toFixed(2)}</p>
             </div>
             <div class="btn02">
-                <a href="#">Comprar Ahora</a>
+                <a class="comprar">Comprar Ahora</a>
             </div>
         </div>
         `
         this.shadowRoot.innerHTML = content;
+
         this.shadowRoot.querySelector('.vaciarCarrito').addEventListener('click', (e) => {
             e.preventDefault();
-            localStorage.removeItem('itemsAgregados');
+            window.itemsAgregados =[]
             this.total = 0;
-            this.renderData([]);
             let report_details = document.querySelector(".report_details")
             report_details.innerHTML= "El carrito esta vacio :(";
+        });
+
+        this.shadowRoot.querySelector('.comprar').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.itemsAgregados =[];
+            this.total = 0;
+            let report_details = document.querySelector(".report_details")
+            report_details.innerHTML= "Gracias por tu compra :)";
         });
     }
 }
