@@ -234,6 +234,8 @@ export class carrito extends HTMLElement{
                 const carritoItem = button.closest('.carritoItem');
                 const itemId = carritoItem.querySelector('.descripcion h2').textContent;
                 carritoItem.remove();
+                const index = window.itemsAgregados.findIndex(val => val.description == itemId);
+                window.itemsAgregados.splice(index, 1);
                 const cantidadElement = carritoItem.querySelector('.cantidad .num');
                 console.log(cantidadElement)
                 const cantidad = parseInt(cantidadElement.textContent);
@@ -294,9 +296,8 @@ export class ileraFinalCarrito extends HTMLElement{
         this.ropa_carrito();
     }
     async ropa_carrito(){
-        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-        console.log("hi",data)
-        //const data = window.itemsAgregados
+        //let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+        const data = window.itemsAgregados
         this.renderData(data);
 
     }
@@ -318,7 +319,7 @@ export class ileraFinalCarrito extends HTMLElement{
         <div class="containerbtn">
             <div class="texto">
                 <p>Total</p>
-                <p>$ ${this.total}</p>
+                <p>$ ${this.total.toFixed(2)}</p>
             </div>
             <div class="btn02">
                 <a href="#">Comprar Ahora</a>
