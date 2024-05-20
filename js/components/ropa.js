@@ -341,6 +341,7 @@ export class ileraFinalCarrito extends HTMLElement{
             this.total = 0;
             let report_details = document.querySelector(".report_details")
             report_details.innerHTML= "Gracias por tu compra :)";
+            contadorCero()
         });
     }
 }
