@@ -55,9 +55,9 @@ function modificarContador(num) {
 window.modificarContador = modificarContador
 
 
-window.itemsAgregados = []
+//window.itemsAgregados = []
 function agregar(img, description, value, id) {
-    //window.itemsAgregados = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+    window.itemsAgregados = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
     const existente = itemsAgregados.find(item => item.description == description);
     let cantidad=1
     if (existente) {
@@ -66,8 +66,8 @@ function agregar(img, description, value, id) {
         const item= {img, description, value, id, cantidad}
         itemsAgregados.push(item)
         console.log("item agregado", itemsAgregados)
-        //localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados));
+        localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados));
     }
     incrementar('contador');
-    //localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados))
+    localStorage.setItem('itemsAgregados', JSON.stringify(itemsAgregados))
 }

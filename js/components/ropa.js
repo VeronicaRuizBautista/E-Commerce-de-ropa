@@ -176,9 +176,10 @@ export class carrito extends HTMLElement{
         this.ropa_carrito();
     }
     async ropa_carrito(){
-        //let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+        console.log("usando local", data)
         //console.log("hi",data)
-        const data = window.itemsAgregados
+        //const data = window.itemsAgregados
         this.renderData(data);
 
     }
@@ -234,7 +235,7 @@ export class carrito extends HTMLElement{
                 const itemId = carritoItem.querySelector('.descripcion h2').textContent;
                 carritoItem.remove();
                 const index = window.itemsAgregados.findIndex(val => val.description == itemId);
-                window.itemsAgregados.splice(index, 1);
+                //window.itemsAgregados.splice(index, 1);
                 const cantidadElement = carritoItem.querySelector('.cantidad .num');
                 console.log(cantidadElement)
                 const cantidad = parseInt(cantidadElement.textContent);
@@ -244,16 +245,16 @@ export class carrito extends HTMLElement{
                 }else {
                     window.restar()
                 }
-                //this.eliminarItemDelLocalStorage(itemId);
+                this.eliminarItemDelLocalStorage(itemId);
             });
         });
     }
 
-    // eliminarItemDelLocalStorage(itemId) {
-    //     let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-    //     data = data.filter(item => item.id !== itemId);
-    //     localStorage.setItem('itemsAgregados', JSON.stringify(data));
-    // }
+    eliminarItemDelLocalStorage(itemId) {
+        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+         data = data.filter(item => item.id !== itemId);
+         localStorage.setItem('itemsAgregados', JSON.stringify(data));
+     }
     getTotal() {
         return this.total;
     }
@@ -272,7 +273,7 @@ export class cantidadCarrito extends HTMLElement{
         this.ropa_carrito();
     }
     async ropa_carrito(){
-        const data = window.itemsAgregados
+        //const data = window.itemsAgregados
         //let data = JSON.parse(localStorage.getItem('itemsAgregados')) || []; 
         this.renderData(data);
 
@@ -295,8 +296,8 @@ export class ileraFinalCarrito extends HTMLElement{
         this.ropa_carrito();
     }
     async ropa_carrito(){
-        //let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-        const data = window.itemsAgregados
+        let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
+        //const data = window.itemsAgregados
         this.renderData(data);
 
     }
