@@ -1,0 +1,16 @@
+{
+  "name": "proyectoweb-1",
+  "version": "1.0.0",
+  "description": "https://github.com/VeronicaRuizBautista/proyectoWeb/assets/156429590/b72adeae-4cc4-46a0-819b-dc76c3e43204",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db":"json-server db/database.json -p 5621"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.0"
+  }
+}

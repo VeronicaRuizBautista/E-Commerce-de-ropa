@@ -1,0 +1,61 @@
+{
+    "hi":[
+        {
+            "img":"https://static.e-stradivarius.net/5/photos4/2024/V/0/1/p/5818/173/210/5818173210_2_4_1.jpg?t=1692629096956&impolicy=stradivarius-itxmediumhigh&imwidth=480&imformat=chrome&imdensity=2.625",
+            "description":"Abrigo trench tacto suave - Moda de mujer",
+            "value":179.9,"id":"abrigo"
+            },
+            {
+                "img":"https://st.mngbcn.com/rcs/pics/static/T6/fotos/S20/67020456_09_B.jpg?ts=1697198607907&imwidth=360&imdensity=2",
+                "description":"Abrigo lana entallado - Mujer",
+                "value":150.83,"id":"abrigo"
+            },
+            {
+                "img":"https://hmcolombia.vtexassets.com/arquivos/ids/3359850/Abrigo-de-botonadura-sencilla---Negro---H-M-CO.jpg?v=638394333019770000","description":"Abrigo de botonadura sencilla - H&M CO",
+                "value":501.34,"id":"abrigo"
+            },
+            {
+                "img":"https://static.e-stradivarius.net/5/photos4/2024/V/0/1/p/5814/469/004/5814469004_2_4_1.jpg?t=1694602028124&impolicy=stradivarius-itxmediumhigh&imwidth=480&imformat=chrome&imdensity=2.625",
+                "description":"Abrigo oversize tacto suave - Moda de mujer",
+                "value":62.05,
+                "id":"abrigo"
+            },
+            {
+                "img":"https://m.media-amazon.com/images/I/614m5qa6VBL._AC_SY500_.jpg","description":" Camisetas gráficas para hombre con estampado de letras florales","value":86.57,"id":"camiseta"
+            },
+            {
+                "img":"https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSvBmfjbzg_6xCJIevO9pz_mviV60GYvpyqOdfMM6pZ4XHXMh6HW5MWRFagOnzvF8GFm1HeVdMVw7De2PVi4Gf2QDEHFl0K1iTOTzr1IRIFtjlXd5W5EeyObSc&usqp=CAE","description":"Camiseta silueta fit, corte central en contraste 100% algodón.","value":360.8,"id":"camiseta"
+            },
+            {
+                "img":"https://m.media-amazon.com/images/I/51jr1d3kSOL._AC_SX522_.jpg","description":"Nike Futura Icon Camiseta Hombre",
+                "value":326.45,
+                "id":"camiseta"
+            },
+            {
+                "img":"https://m.media-amazon.com/images/I/71koNv9HdTL._AC_SX522_.jpg","description":"Pokemon Pikachu - Camiseta gráfica para niños",
+                "value":453.8,
+                "id":"camiseta"
+            },
+            {
+                "img":"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRgugKjKCHhgfrjUqjhdgaC6jCiMruQ7sdtDkpu2zlQiJQopW3PuASbYRJIaPb7PR2rDwF4RNWSkE2eMD8q9aQAD45kejXaxcUDhYvKfuSar0ANbfkgQWWi3A&usqp=CAE","description":"Pantalones de senderismo para hombre, de secado rápido, ligeros, convertibles",
+                "value":628.97,
+                "id":"pantalon"
+            },
+            {
+                "img":"https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSzjOIZvaZ7iiqyyGn_ZICPIGy8RwP4w1jC5HSW0BTXVeHGnfV1d6o6sdGFz7FdGHZsOvR1REPlAit_3iRNQgJRzjYSwdvGCz1FYHc_ZxOymz6IvWD6HshP",
+                "description":"Pantalón de tiro alto con cintura ajustada y pernera ancha","value":853.02,
+                "id":"pantalon"
+            },
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSqbe7g7KG9qXzdS0uyDKYsdF5-L7Lo3Y56tW5nl16-4o6JHAicPUdyTWjMBryJmq-JUUnLP07vVYFIf0_TV018Zh-SfzLcv7e_t-Anae-Ze2Nhr9WG__YG&usqp=CAE","description":"Pantalón De Vestir Oficina/dama Mujer",
+                "value":557.71,
+                "id":"pantalon"
+            },
+            {
+                "img":"https://hmcolombia.vtexassets.com/arquivos/ids/3014308/Pantalon-cargo-en-lona---Verde-caqui---H-M-CO.jpg?v=638302771537330000","description":"Pantalón cargo Ripstop Regular Fit",
+                "value":855.21,
+                "id":"pantalon"
+            }
+    ]
+        
+}

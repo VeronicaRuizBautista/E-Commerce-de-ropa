@@ -7,7 +7,7 @@ export class todos extends HTMLElement{
         this.ropa_toda();
     }
     async ropa_toda(){
-        const bdata = await fetch("https://6608363ca2a5dd477b14291c.mockapi.io/allProduct")
+        const bdata = await fetch("http://localhost:5621/hi")
         const data = await bdata.json();
         this.renderData(data);
     }
@@ -46,7 +46,7 @@ export class abrigos extends HTMLElement{
         this.ropa_abrigos();
     }
     async ropa_abrigos(){
-        const bdata = await fetch("https://6608363ca2a5dd477b14291c.mockapi.io/allProduct")
+        const bdata = await fetch("http://localhost:5621/hi")
         console.log(bdata)
         const data = await bdata.json();
         console.log(data)
@@ -90,7 +90,7 @@ export class camisetas extends HTMLElement{
         this.ropa_camisetas();
     }
     async ropa_camisetas(){
-        const bdata = await fetch("https://6608363ca2a5dd477b14291c.mockapi.io/allProduct")
+        const bdata = await fetch("http://localhost:5621/hi")
         console.log(bdata)
         const data = await bdata.json();
         console.log(data)
@@ -134,7 +134,7 @@ export class pantalones extends HTMLElement{
         this.ropa_pantalones();
     }
     async ropa_pantalones(){
-        const bdata = await fetch("https://6608363ca2a5dd477b14291c.mockapi.io/allProduct")
+        const bdata = await fetch("http://localhost:5621/hi")
         const data = await bdata.json();
         this.renderData(data);
     }
