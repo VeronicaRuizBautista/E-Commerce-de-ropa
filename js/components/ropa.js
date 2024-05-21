@@ -177,7 +177,6 @@ export class carrito extends HTMLElement{
     }
     async ropa_carrito(){
         let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-        console.log("usando local", data)
         //console.log("hi",data)
         //const data = window.itemsAgregados
         this.renderData(data);

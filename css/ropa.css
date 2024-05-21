@@ -61,7 +61,6 @@
 }
 .carritoItem .descripcion{
     margin: 1em;
-    width: 20%;
     height: 70%;
     display: flex;
     flex-direction: column;
@@ -157,5 +156,49 @@ a{
     }
     .container p{
         font-size: 1.5em;
+    }
+    .btn01{
+        width: 8em;
+        height: 2em;
+        font-size: 1.2em;
+        border-radius: 20px;
+    }
+    .containerbtn{
+        width: 15em;
+        height: 5em;
+        border-radius: 20px;
+    }
+    .containerbtn .btn02{
+        width: 8em;
+        height: 2em;
+        font-size: 1.1em;
+        border-radius: 20px;
+    }
+    .carritoItem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .carritoItem img{
+        width: 20vw;
+    }
+    .descripcion{
+        display: flex;
+        flex-direction: column;
+    }
+    .cantidad,
+    .precio,
+    .subtotal,
+    .btn{
+        width: 100%;
+        height: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cantidad div{
+        width: 5em;
     }
 }

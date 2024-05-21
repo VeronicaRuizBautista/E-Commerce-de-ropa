@@ -257,4 +257,9 @@ header a:hover{
         width: 80vw;
         height: auto;
     }
+    .ilera_final{
+        width: 100vw;
+        height: 7em;
+        padding: 1em;
+    }
 }
