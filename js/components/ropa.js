@@ -47,7 +47,6 @@ export class abrigos extends HTMLElement{
     }
     async ropa_abrigos(){
         const bdata = await fetch("http://localhost:5621/hi")
-        console.log(bdata)
         const data = await bdata.json();
         console.log(data)
         this.renderData(data);
@@ -231,9 +230,9 @@ export class carrito extends HTMLElement{
         eliminar.forEach(button => {
             button.addEventListener('click', () => {
                 const carritoItem = button.closest('.carritoItem');
-                const itemId = carritoItem.querySelector('.descripcion h2').textContent;
+                const itemId = carritoItem.querySelector('.descripcion p').textContent;
                 carritoItem.remove();
-                const index = window.itemsAgregados.findIndex(val => val.description == itemId);
+                //index = window.itemsAgregados.findIndex(val => val.description == itemId);
                 //window.itemsAgregados.splice(index, 1);
                 const cantidadElement = carritoItem.querySelector('.cantidad .num');
                 console.log(cantidadElement)
@@ -251,7 +250,8 @@ export class carrito extends HTMLElement{
 
     eliminarItemDelLocalStorage(itemId) {
         let data = JSON.parse(localStorage.getItem('itemsAgregados')) || [];
-         data = data.filter(item => item.id !== itemId);
+         data = data.filter(val => val.description !== itemId);
+         console.log("id", data)
          localStorage.setItem('itemsAgregados', JSON.stringify(data));
      }
     getTotal() {
@@ -263,27 +263,27 @@ customElements.define("my-carrito" , carrito)
 
 
 //cantidad de items en carrito
-export class cantidadCarrito extends HTMLElement{
-    constructor(){
-        super()
-        this.attachShadow({mode: "open"});
-    }
-    connectedCallback(){
-        this.ropa_carrito();
-    }
-    async ropa_carrito(){
-        //const data = window.itemsAgregados
-        //let data = JSON.parse(localStorage.getItem('itemsAgregados')) || []; 
-        this.renderData(data);
+// export class cantidadCarrito extends HTMLElement{
+//     constructor(){
+//         super()
+//         this.attachShadow({mode: "open"});
+//     }
+//     connectedCallback(){
+//         this.ropa_carrito();
+//     }
+//     async ropa_carrito(){
+//         //const data = window.itemsAgregados
+//         //let data = JSON.parse(localStorage.getItem('itemsAgregados')) || []; 
+//         this.renderData(data);
 
-    }
-        renderData(data){
-            let cantidad = data.length;
-            let content = `<p>${cantidad}</p>`
-            this.shadowRoot.innerHTML = content;
-        }
-}
-customElements.define("my-cantidad" , cantidadCarrito)
+//     }
+//         renderData(data){
+//             let cantidad = data.length;
+//             let content = `<p>${cantidad}</p>`
+//             this.shadowRoot.innerHTML = content;
+//         }
+// }
+// customElements.define("my-cantidad" , cantidadCarrito)
 
 export class ileraFinalCarrito extends HTMLElement{
     constructor(){
@@ -329,15 +329,16 @@ export class ileraFinalCarrito extends HTMLElement{
 
         this.shadowRoot.querySelector('.vaciarCarrito').addEventListener('click', (e) => {
             e.preventDefault();
-            window.itemsAgregados =[]
+            localStorage.setItem('itemsAgregados', JSON.stringify([]));
             this.total = 0;
             let report_details = document.querySelector(".report_details")
             report_details.innerHTML= "El carrito esta vacio :(";
         });
 
         this.shadowRoot.querySelector('.comprar').addEventListener('click', (e) => {
+            console.log("dioss")
             e.preventDefault();
-            window.itemsAgregados =[];
+            localStorage.setItem('itemsAgregados', JSON.stringify([]));
             this.total = 0;
             let report_details = document.querySelector(".report_details")
             report_details.innerHTML= "Gracias por tu compra :)";

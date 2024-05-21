@@ -23,25 +23,35 @@ function incrementar(id) {
     let contador = parseInt(document.getElementById(id).innerText);
     contador++;
     document.getElementById(id).innerText = contador;
+    localStorage.setItem('contador', contador);
 }
 
 function restar() {
     let contador = parseInt(document.getElementById('contador').innerText);
     contador--;
     document.getElementById('contador').innerText = contador;
+    localStorage.setItem('contador', contador);
 }
 
 window.restar =restar
 function contadorCero() {
     document.getElementById('contador').innerText = 0;
+    localStorage.setItem('contador', 0);
 }
 function modificarContador(num) {
     let cont = parseInt(document.getElementById('contador').innerText);
     contador = cont - num;
     document.getElementById('contador').innerText = contador;
+    localStorage.setItem('contador', contador);
 }
 window.modificarContador = modificarContador
 
+window.onload = function() {
+    let contadorGuardado = localStorage.getItem('contador');
+    if (contadorGuardado !== null) {
+        document.getElementById('contador').innerText = contadorGuardado;
+    }
+};
 
 //window.itemsAgregados = []
 function agregar(img, description, value, id) {
