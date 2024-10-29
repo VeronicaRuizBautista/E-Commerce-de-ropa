@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "db": "json-server db/database.json -p 5621",
-    "dev": "app.js"
+    "front": "node app.js",
+    "dev": "concurrently \"npm run front\" \"npm run db\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^9.0.1",
+    "express": "^4.21.1",
     "json-server": "^1.0.0-beta.0",
+    "node": "^23.1.0",
     "oracledb": "^6.6.0"
   }
 }
